@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jomar Tumalad</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -16,21 +15,22 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Inter', sans-serif;
-    color: #fff; 
+    color: #fff;
 
-    /* 🔥 BACKGROUND IMAGE */
     background: url('backgroundimage') no-repeat center center/cover;
+    padding: 20px; /* prevents edge cut on mobile */
 }
 
-/* 🔥 GLASS CARD */
+/* CARD */
 .card {
-    width: 650px;
-    padding: 30px;
+    width: 100%;
+    max-width: 650px;
+    padding: clamp(20px, 4vw, 30px);
     border-radius: 20px;
 
     background: rgba(15, 23, 42, 0.65);
@@ -40,13 +40,15 @@ body {
     box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
 
     display: flex;
-    gap: 30px;
+    gap: clamp(15px, 4vw, 30px);
     align-items: center;
+
+    position: relative;
 }
 
 /* LOGO */
 .logo img {
-    width: 120px;
+    width: clamp(80px, 20vw, 120px);
 }
 
 /* CONTENT */
@@ -57,36 +59,37 @@ body {
 /* NAME */
 .name {
     font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
+    font-size: clamp(20px, 5vw, 28px);
     letter-spacing: 2px;
     margin-bottom: 5px;
 }
 
 /* ROLE */
 .role {
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
     color: #38bdf8;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     letter-spacing: 2px;
 }
 
-/* CONTACT ITEMS */
+/* CONTACT */
 .contact {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .contact a {
     text-decoration: none;
     color: #e2e8f0;
-    font-size: 14px;
+    font-size: clamp(12px, 3vw, 14px);
 
     display: flex;
     align-items: center;
     gap: 10px;
 
     transition: 0.3s;
+    word-break: break-word; /* prevents overflow */
 }
 
 .contact a:hover {
@@ -94,12 +97,7 @@ body {
     transform: translateX(5px);
 }
 
-/* ICON STYLE */
-.icon {
-    width: 18px;
-}
-
-/* NEON EDGE EFFECT */
+/* NEON BORDER */
 .card::before {
     content: "";
     position: absolute;
@@ -111,6 +109,23 @@ body {
     -webkit-mask-composite: xor;
             mask-composite: exclude;
 }
+
+/* 🔥 MOBILE FIX */
+@media (max-width: 600px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact a {
+        justify-content: center;
+    }
+}
 </style>
 
 </head>
@@ -119,32 +134,19 @@ body {
 
 <div class="card">
 
-    <!-- LOGO -->
     <div class="logo">
         <img src="logo" alt="Logo">
     </div>
 
-    <!-- DETAILS -->
     <div class="content">
         <div class="name">JOMAR TUMALAD</div>
         <div class="role">WEB DEVELOPER</div>
 
         <div class="contact">
-            <a href="mailto:tumaladjomar@gmail.com">
-                📧 tumaladjomar@gmail.com
-            </a>
-
-            <a href="https://linkedin.com/in/jomartumalad" target="_blank">
-                🔗 linkedin.com/in/jomartumalad
-            </a>
-
-            <a href="https://github.com/jomtum" target="_blank">
-                💻 github.com/jomtum
-            </a>
-
-            <a href="tel:+639123456789">
-                📱 +63 912 345 6789
-            </a>
+            <a href="mailto:tumaladjomar@gmail.com">📧 tumaladjomar@gmail.com</a>
+            <a href="https://linkedin.com/in/jomartumalad" target="_blank">🔗 linkedin.com/in/jomartumalad</a>
+            <a href="https://github.com/jomtum" target="_blank">💻 github.com/jomtum</a>
+            <a href="tel:+639123456789">📱 +63 912 345 6789</a>
         </div>
     </div>
 
