@@ -1,238 +1,269 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Business Card</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Card</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Inter', sans-serif;
-    background: url('backgroundimage') no-repeat center/cover;
-}
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Inter", sans-serif;
+        background: url("backgroundimage") no-repeat center/cover;
+      }
 
-/* CARD */
-.card {
-    width: 100%;
-    max-width: 900px;
-    display: flex;
-    padding: 30px;
-    color: #fff;
-}
+      /* CARD */
+      .card {
+        width: 100%;
+        max-width: 900px;
+        display: flex;
+        padding: 30px;
+        color: #fff;
+      }
 
-/* LEFT */
-.left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
+      /* LEFT */
+      .left {
+        flex: 1;
+        display: flex;
+        flex-direction: column; /* DEFAULT = vertical */
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
 
-.left img {
-    width: 200px;
-}
-
-/* COMPANY NAME */
-.company {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2e7d32;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-/* RIGHT CONTENT */
-.right {
-    flex: 2;
-    position: relative;
-    padding-left: 30px;
-}
-
-/* VERTICAL LINE */
-.right::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 10px;
-    bottom: 10px;
-    width: 3px;
-    background: #2e7d32;
-}
-
-/* NAME */
-.name {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-/* ROLE */
-.role {
-    font-size: 20px;
-    color: #2e7d32;
-    margin-bottom: 15px;
-}
-
-/* DIVIDER */
-.divider {
-    height: 2px;
-    background: #2e7d32;
-    margin-bottom: 20px;
-}
-
-/* INFO GRID */
-.info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px 30px;
-    margin-bottom: 25px;
-}
-
-/* CLICKABLE ITEMS */
-.item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    text-decoration: none;
-    color: #fff;
-    transition: 0.3s;
-}
-
-.item:hover {
-    color: #2e7d32;
-}
-
-/* ICON */
-.icon {
-    font-size: 18px;
-    color: #2e7d32;
-}
-
-/* TAGLINE */
-.tagline {
-    font-size: 14px;
-    color: #aaa;
-    font-style: italic;
-    margin-top: 10px;
-}
-
-/* QR */
-.qr {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-}
-
-.qr img {
-    width: 100px;
-    background: #fff;
-    padding: 5px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .card {
-        flex-direction: column;
+      /* COMPANY NAME */
+      .company {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2e7d32;
+        letter-spacing: 1px;
         text-align: center;
-    }
+        /* prevents breaking into multiple lines */
+        max-width: 220px;
+      }
 
-    .right {
-        padding-left: 0;
-        margin-top: 20px;
-    }
+      /* RIGHT CONTENT */
+      .right {
+        flex: 2;
+        position: relative;
+      }
 
-    .right::before {
-        display: none;
-    }
+      /* VERTICAL LINE */
+      .right::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        bottom: 10px;
+        width: 3px;
+        background: #2e7d32;
+      }
 
-    .info {
-        grid-template-columns: 1fr;
-    }
+      /* NAME */
+      .name {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        padding-left: 30px;
+      }
 
-    .qr {
-        position: static;
-        margin-top: 20px;
-    }
+      /* ROLE */
+      .role {
+        font-size: 20px;
+        color: #2e7d32;
+        margin-bottom: 15px;
+        padding-left: 30px;
+        font-style: italic;
+      }
 
-    .left img {
-        width: 150px;
-    }
-}
-</style>
+      /* DIVIDER */
+      .divider {
+        height: 2px;
+        background: #2e7d32;
+        margin-bottom: 20px;
+      }
 
-</head>
-<body>
+      /* INFO GRID */
+      .info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 30px;
+        margin-bottom: 25px;
+        padding-left: 30px;
+      }
 
-<div class="card">
+      /* CLICKABLE ITEMS */
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        text-decoration: none;
+        color: #fff;
+        transition: 0.3s;
+      }
 
-    <!-- LEFT SIDE -->
-    <div class="left">
-        <img src="updatedlogo.png" alt="Logo">
-        <div class="company">ACCORDACES INC.</div>
-    </div>
+      .item:hover {
+        color: #2e7d32;
+      }
 
-    <!-- RIGHT SIDE -->
-    <div class="right">
+      /* ICON */
+      .icon {
+        font-size: 18px;
+        color: #2e7d32;
+      }
 
+      /* TAGLINE */
+      .tagline {
+        font-size: 14px;
+        color: #aaa;
+        font-style: italic;
+        margin-top: 10px;
+        padding-left: 30px;
+      }
+
+      /* QR */
+      .qr {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      .qr img {
+        width: 100px;
+        background: #fff;
+        padding: 5px;
+      }
+
+      @media (max-width: 768px) {
+        .card {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .left {
+          flex-direction: row;
+          flex-wrap: wrap; /* THIS is the key fix */
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .left img {
+          width: 120px;
+        }
+
+        .company {
+          text-align: center;
+          white-space: normal; /* allow wrapping if needed */
+        }
+
+        .left::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: #2e7d32;
+          margin-top: 12px;
+
+          /* IMPORTANT FIX */
+          order: 99;
+          flex-basis: 100%;
+        }
+
+        /* RIGHT SECTION */
+        .right {
+          padding-left: 0;
+          margin-top: 20px;
+        }
+
+        .right::before {
+          display: none;
+        }
+
+        /* REMOVE DUPLICATE LINE */
+        .divider {
+          display: none;
+        }
+
+        /* CONTENT */
+        .info {
+          grid-template-columns: 1fr;
+        }
+
+        .qr {
+          position: static;
+          margin-top: 20px;
+        }
+
+        .name {
+          margin-top: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <!-- LEFT SIDE -->
+      <div class="left">
+        <img src="updatedlogo.png" alt="Logo" />
+        <div class="company">
+          ACCORD Advertising Concept & Expert Services, Inc
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="right">
         <div class="name">JOSE MARI TUMALAD</div>
         <div class="role">IT Officer</div>
 
         <div class="divider"></div>
 
         <div class="info">
+          <a class="item" href="tel:+63912345678">
+            <span class="icon">📞</span>
+            +63912345678
+          </a>
 
-            <a class="item" href="tel:+63912345678">
-                <span class="icon">📞</span>
-                0912345678
-            </a>
+          <a
+            class="item"
+            href="https://www.google.com/maps/search/?api=1&query=17+Payapa+St+Plainview+Mandaluyong"
+            target="_blank"
+          >
+            <span class="icon">📍</span>
+            17 Payapa St. Mandaluyong
+          </a>
 
-            <a class="item"
-               href="https://www.google.com/maps/search/?api=1&query=17+Payapa+St+Plainview+Mandaluyong"
-               target="_blank">
-                <span class="icon">📍</span>
-                17 Payapa St. Mandaluyong
-            </a>
+          <a class="item" href="mailto:josemari.tumalad@accordaces.com">
+            <span class="icon">✉️</span>
+            josemari.tumalad@accordaces.com
+          </a>
 
-            <a class="item" href="mailto:josemari.tumalad@accordaces.com">
-                <span class="icon">✉️</span>
-                josemari.tumalad@accordaces.com
-            </a>
-
-            <a class="item" href="https://www.accordaces.com" target="_blank">
-                <span class="icon">🌐</span>
-                www.accordaces.com
-            </a>
-
+          <a class="item" href="https://www.accordaces.com" target="_blank">
+            <span class="icon">🌐</span>
+            www.accordaces.com
+          </a>
         </div>
 
         <!-- TAGLINE -->
         <div class="tagline">
-            “Building smart solutions for a better digital future.”
+          “Building smart solutions for a better digital future.”
         </div>
-
-        <!-- QR -->
-        <div class="qr">
-            <img src="qr-code" alt="QR Code">
-        </div>
-
+      </div>
     </div>
-
-</div>
-
-</body>
+  </body>
 </html>
