@@ -18,12 +18,12 @@
       }
 
       .name,
-.role,
-.company,
-.tagline,
-.item {
-  text-transform: uppercase;
-}
+      .role,
+      .company,
+      .tagline,
+      .item {
+        text-transform: uppercase;
+      }
 
       body {
         min-height: 100vh;
@@ -79,6 +79,10 @@
         bottom: 10px;
         width: 3px;
         background: #2e7d32;
+      }
+
+      .left img {
+        width: 120px;
       }
 
       /* NAME */
@@ -237,6 +241,10 @@
           gap: 8px;
         }
 
+        .name {
+          font-size: 18px;
+        }
+
         .left img {
           width: 70px;
           flex-shrink: 0;
@@ -283,6 +291,26 @@
         .name,
         .role {
           padding-left: 0;
+        }
+      }
+
+      @media (max-width: 375px) {
+        .info {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 8px 10px;
+          padding-left: 0;
+        }
+
+        .item {
+          font-size: 11px;
+          gap: 5px;
+          min-width: 0;
+        }
+
+        .item span:last-child {
+          white-space: normal;
+          word-break: break-word;
+          overflow-wrap: anywhere;
         }
       }
 
@@ -349,12 +377,12 @@
 
           <a class="item" href="mailto:josemari.tumalad@accordaces.com">
             <span class="icon">✉️</span>
-            josemari.tumalad@accordaces.com
+            <span>josemari.tumalad@accordaces.com</span>
           </a>
 
           <a class="item" href="https://www.accordaces.com" target="_blank">
             <span class="icon">🌐</span>
-            www.accordaces.com
+            <span>www.accordaces.com</span>
           </a>
         </div>
 
