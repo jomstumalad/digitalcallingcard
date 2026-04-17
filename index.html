@@ -21,7 +21,6 @@ body {
     align-items: center;
     font-family: 'Inter', sans-serif;
 
-    /* TEXTURE BACKGROUND */
     background: url('backgroundimage') no-repeat center/cover;
 }
 
@@ -32,7 +31,6 @@ body {
     display: flex;
     padding: 30px;
     color: #fff;
-
 }
 
 /* LEFT LOGO */
@@ -96,14 +94,22 @@ body {
     padding-left: 30px;
 }
 
-/* ITEM */
+/* CLICKABLE ITEMS */
 .item {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
 }
 
+.item:hover {
+    color: #2e7d32;
+}
+
+/* ICON */
 .icon {
     font-size: 18px;
     color: #2e7d32;
@@ -122,7 +128,7 @@ body {
     padding: 5px;
 }
 
-/* 🔥 RESPONSIVE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .card {
         flex-direction: column;
@@ -171,25 +177,33 @@ body {
         <div class="divider"></div>
 
         <div class="info">
-            <div class="item">
+
+            <!-- PHONE -->
+            <a class="item" href="tel:+63912345678">
                 <span class="icon">📞</span>
                 0912345678
-            </div>
+            </a>
 
-            <div class="item">
+            <!-- ADDRESS -->
+            <a class="item"
+               href="https://www.google.com/maps/search/?api=1&query=17+Payapa+St+Plainview+Mandaluyong"
+               target="_blank">
                 <span class="icon">📍</span>
                 17 Payapa St. Brgy. Plainview Mandaluyong
-            </div>
+            </a>
 
-            <div class="item">
+            <!-- EMAIL -->
+            <a class="item" href="mailto:josemari.tumalad@accordaces.com">
                 <span class="icon">✉️</span>
                 josemari.tumalad@accordaces.com
-            </div>
+            </a>
 
-            <div class="item">
+            <!-- WEBSITE -->
+            <a class="item" href="https://www.accordaces.com" target="_blank">
                 <span class="icon">🌐</span>
                 www.accordaces.com
-            </div>
+            </a>
+
         </div>
 
         <!-- QR -->
