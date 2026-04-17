@@ -20,7 +20,6 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Inter', sans-serif;
-
     background: url('backgroundimage') no-repeat center/cover;
 }
 
@@ -33,22 +32,34 @@ body {
     color: #fff;
 }
 
-/* LEFT LOGO */
+/* LEFT */
 .left {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
 .left img {
-    width: 220px;
+    width: 200px;
+}
+
+/* COMPANY NAME */
+.company {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2e7d32;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 /* RIGHT CONTENT */
 .right {
     flex: 2;
     position: relative;
+    padding-left: 30px;
 }
 
 /* VERTICAL LINE */
@@ -67,18 +78,16 @@ body {
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 5px;
-    padding-left: 30px;
 }
 
 /* ROLE */
 .role {
     font-size: 20px;
     color: #2e7d32;
-    margin-bottom: 20px;
-    padding-left: 30px;
+    margin-bottom: 15px;
 }
 
-/* HORIZONTAL LINE */
+/* DIVIDER */
 .divider {
     height: 2px;
     background: #2e7d32;
@@ -90,8 +99,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px 30px;
-    align-items: center;
-    padding-left: 30px;
+    margin-bottom: 25px;
 }
 
 /* CLICKABLE ITEMS */
@@ -113,6 +121,14 @@ body {
 .icon {
     font-size: 18px;
     color: #2e7d32;
+}
+
+/* TAGLINE */
+.tagline {
+    font-size: 14px;
+    color: #aaa;
+    font-style: italic;
+    margin-top: 10px;
 }
 
 /* QR */
@@ -164,13 +180,15 @@ body {
 
 <div class="card">
 
-    <!-- LEFT LOGO -->
+    <!-- LEFT SIDE -->
     <div class="left">
         <img src="updatedlogo.png" alt="Logo">
+        <div class="company">ACCORDACES INC.</div>
     </div>
 
-    <!-- RIGHT CONTENT -->
+    <!-- RIGHT SIDE -->
     <div class="right">
+
         <div class="name">JOSE MARI TUMALAD</div>
         <div class="role">IT Officer</div>
 
@@ -178,27 +196,23 @@ body {
 
         <div class="info">
 
-            <!-- PHONE -->
             <a class="item" href="tel:+63912345678">
                 <span class="icon">📞</span>
                 0912345678
             </a>
 
-            <!-- ADDRESS -->
             <a class="item"
                href="https://www.google.com/maps/search/?api=1&query=17+Payapa+St+Plainview+Mandaluyong"
                target="_blank">
                 <span class="icon">📍</span>
-                17 Payapa St. Brgy. Plainview Mandaluyong
+                17 Payapa St. Mandaluyong
             </a>
 
-            <!-- EMAIL -->
             <a class="item" href="mailto:josemari.tumalad@accordaces.com">
                 <span class="icon">✉️</span>
                 josemari.tumalad@accordaces.com
             </a>
 
-            <!-- WEBSITE -->
             <a class="item" href="https://www.accordaces.com" target="_blank">
                 <span class="icon">🌐</span>
                 www.accordaces.com
@@ -206,7 +220,17 @@ body {
 
         </div>
 
+        <!-- TAGLINE -->
+        <div class="tagline">
+            “Building smart solutions for a better digital future.”
+        </div>
 
+        <!-- QR -->
+        <div class="qr">
+            <img src="qr-code" alt="QR Code">
+        </div>
+
+    </div>
 
 </div>
 
