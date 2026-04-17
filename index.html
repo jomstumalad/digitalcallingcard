@@ -218,6 +218,35 @@
           padding-left: 0;
         }
       }
+
+      @media (max-width: 320px) {
+
+  .left {
+    flex-direction: row;        /* force horizontal */
+    flex-wrap: nowrap;         /* STOP wrapping */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .company {
+    font-size: 14px;           /* shrink so it fits */
+    max-width: 140px;          /* prevent pushing down */
+    white-space: nowrap;       /* force single line */
+    overflow: hidden;
+    text-overflow: ellipsis;   /* prevents breaking layout */
+    text-align: left;
+  }
+
+  .left img {
+    width: 90px;               /* smaller logo for 320px */
+  }
+
+  /* remove the fake line behavior for ultra small screens */
+  .left::after {
+    display: none;
+  }
+}
     </style>
   </head>
   <body>
@@ -264,9 +293,7 @@
         </div>
 
         <!-- TAGLINE -->
-        <div class="tagline">
-          “Building smart solutions for a better digital future.”
-        </div>
+        <div class="tagline">“Where Brand Meets the Market.”</div>
       </div>
     </div>
   </body>
